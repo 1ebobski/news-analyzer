@@ -1,0 +1,27 @@
+@import url("./__author-photo/section__author-photo.css");
+@import url("./__header/section__header.css");
+@import url("./__link/section__link.css");
+@import url("./__title/section__title.css");
+@import url("./__paragraph/section__paragraph.css");
+@import url("./_grey/section_grey.css");
+@import url("./_author/section_author.css");
+@import url("./_tech/section_tech.css");
+
+.section {
+  padding: 80px calc((100vw - 1232px) / 2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 1279px) {
+  .section {
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 16px;
+  }
+}

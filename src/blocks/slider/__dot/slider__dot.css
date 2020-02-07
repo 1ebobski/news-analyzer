@@ -1,0 +1,12 @@
+@import url("./_selected/slider__dot_selected.css");
+
+.slider__dot {
+  padding: 2px;
+}
+
+.slider__dot::before {
+  content: "•";
+  border: none;
+  color: #d1d2d6;
+  font-size: 32px;
+}

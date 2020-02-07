@@ -1,0 +1,3 @@
+.slider__dot_selected::before {
+  color: black;
+}

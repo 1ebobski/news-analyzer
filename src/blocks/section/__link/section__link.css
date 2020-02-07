@@ -1,0 +1,11 @@
+@import url("./_github/section__link_github.css");
+
+.section__link {
+  text-decoration: none;
+  color: #1a1b22;
+  font-weight: 500;
+}
+
+.section__link::after {
+  content: url("../../../images/arrow-icon-black.svg");
+}

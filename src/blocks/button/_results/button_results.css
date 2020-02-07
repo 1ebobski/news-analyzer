@@ -1,0 +1,10 @@
+.button_results {
+  background-color: white;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .button_results {
+    margin-bottom: 28px;
+  }
+}

@@ -1,0 +1,16 @@
+.section__paragraph_wide {
+  width: 815px;
+  margin: 0 0 12px;
+}
+
+@media (max-width: 895px) {
+  .section__paragraph_wide {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section__paragraph_wide {
+    margin-bottom: 24px;
+  }
+}
