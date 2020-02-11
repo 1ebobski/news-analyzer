@@ -7,8 +7,8 @@
 
 .commit {
   background-color: #fff;
-  max-width: 352px;
-  min-width: 256px;
+  min-width: 352px;
+  /* min-width: 256px; */
   height: 240px;
   border-radius: 16px;
   margin: 0 8px;

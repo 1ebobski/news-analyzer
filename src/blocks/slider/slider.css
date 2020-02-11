@@ -8,10 +8,14 @@
   position: relative;
   justify-content: center;
   z-index: 0;
+  width: 1440px;
+  overflow: hidden;
+  align-self: center;
 }
 
 @media (max-width: 1279px) {
   .slider {
     justify-content: start;
+    align-self: auto;
   }
 }

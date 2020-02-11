@@ -4,77 +4,173 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>News Analyzer - Main page</title>
-    <link rel="stylesheet" href="main.d87c290b896a76d98df2.css" />
+    <meta name="description" content="News Analyzer dynamic web-site" />
+    <meta name="author" content="Fedor Lukhmanov" />
+
+    <title>News Analyzer</title>
+    <link
+      rel="stylesheet"
+      href="styles/main.d4be9a2c7187e2a64751.css"
+    />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
   </head>
   <body>
-    <div class="root">
-      <header class="header header_white header_absolute"
-        ><a class="header__logo">NewsAnalyzer</a>
+    <div class="page">
+      <header class="header header_white-content header_absolute">
+        <a class="header__logo header__logo_white" href="./main.html"
+          >NewsAnalyzer</a
+        >
         <nav class="header__links-container"
-          ><a class="header__link header__link_selected">Главная</a>
-          <a class="header__link">О проекте</a>
+          ><a
+            class="link header__link header__link_white header__link_selected"
+            href="./main.html"
+            >Главная</a
+          >
+          <a class="link header__link header__link_white" href="./about.html"
+            >О проекте</a
+          >
         </nav>
       </header>
       <main class="main">
         <section class="search">
-          <div class="search__container">
-            <h1 class="search__title">Что в мире творится?</h1>
-            <p class="search__subtitle"
-              >Введите в поиске любую тему и узнайте, насколько популярной она
-              была в новостях за прошедшую неделю.</p
-            >
-            <form class="search__form">
-              <input class="search__input" placeholder="Введите тему новости" />
-              <input class="search__button" type="submit" value="Искать" />
-            </form>
-          </div>
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__subtitle"
+            >Введите в поиске любую тему и узнайте, насколько популярной она
+            была в новостях за прошедшую неделю.</p
+          >
+
+          <input
+            class="search__input"
+            placeholder="Введите тему новости"
+            required
+          />
+          <input class="button button_search" type="submit" value="Искать" />
         </section>
-        <section class="section">
-          <div class="section__header"
-            ><h2 class="section__title">Результаты поиска</h2>
-            <a class="section__link" href="./">Посмотреть аналитику</a></div
+
+        <section class="search-status section section_grey">
+          <div class="search-status__loader"></div>
+          <h3 class="search-status__subtitle">Идет поиск новостей...</h3
+          ><i class="circle-preloader"></i
+        ></section>
+
+        <section class="search-status section section_grey">
+          <svg
+            class="not-found__icon"
+            width="96"
+            height="96"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="43" cy="43" r="36.5" stroke="#D1D2D6" />
+            <path d="M69 69L88.5 88.5" stroke="#D1D2D6" />
+            <path
+              d="M58.3283 55.9592C54.6606 51.6981 49.2275 49 43.1642 49C37.1009 49 31.6678 51.6981 28 55.9592"
+              stroke="#D1D2D6"
+            />
+            <circle cx="55.5" cy="33.5" r="1.5" fill="#D1D2D6" />
+            <circle cx="30.5" cy="33.5" r="1.5" fill="#D1D2D6" />
+          </svg>
+          <h3 class="search-status__title">Ничего не найдено</h3>
+          <p class="search-status__subtitle"
+            >К сожалению по вашему запросу ничего не найдено.</p
           >
         </section>
-        <section class="author">
+
+        <section class="section section_grey">
+          <div class="section__header"
+            ><h2 class="section__title">Результаты поиска</h2>
+            <a class="link section__link" href="./paper.html"
+              >Посмотреть аналитику
+            </a></div
+          >
+
+          <div class="news-grid">
+            <div class="article-card article-card_one">
+              <time class="article-card__date" datetime="2019-08-02 20:00"
+                >2 августа, 2019</time
+              >
+              <h3 class="article-card__title"
+                >Национальное достояние – парки</h3
+              >
+              <p class="article-card__paragraph"
+                >В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.</p
+              >
+              <a class="article-card__source" href="">Лента.ру</a>
+            </div>
+            <div class="article-card article-card_two">
+              <time class="article-card__date" datetime="2019-08-02 20:00"
+                >2 августа, 2019</time
+              >
+              <h3 class="article-card__title"
+                >Лесные огоньки: история одной фотографии</h3
+              >
+              <p class="article-card__paragraph"
+                >Фотограф отвлеклась от освещения суровой политической
+                реальности Мексики, чтобы запечатлеть ускользающую красоту
+                одного из местных чудес природы.</p
+              >
+              <a class="article-card__source" href="">Медуза</a>
+            </div>
+            <div class="article-card article-card_three">
+              <time class="article-card__date" datetime="2019-08-02 20:00"
+                >2 августа, 2019</time
+              >
+              <h3 class="article-card__title"
+                >«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3
+              >
+              <p class="article-card__paragraph"
+                >Знаменитый фотограф снимает первозданные леса России, чтобы
+                рассказать о необходимости их сохранения. В этот раз он
+                отправился в Двинско-Пинежскую тайгу, где...</p
+              >
+              <a class="article-card__source" href="">Риа</a>
+            </div>
+          </div>
+          <button class="button button_results">Показать еще</button>
+        </section>
+        <section class="section section_author">
+          <h2 class="section__title">Об авторе</h2>
+          <p class="section__paragraph section__paragraph_narrow"
+            >Это блок с описанием автора проекта. Здесь следует указать, как вас
+            зовут, чем вы занимаетесь, какими технологиями разработки
+            владеете.</p
+          >
+          <p class="section__paragraph section__paragraph_narrow"
+            >Также можно рассказать о процессе обучения в Практикуме, чему вы
+            тут научились, и чем можете помочь потенциальным заказчикам.</p
+          >
           <img
-            class="author__photo"
-            src="./images/malevich.jpg"
+            class="section__author-photo"
+            src="./images/author-photo.jpg"
             alt="Федя Лухманов,
         автор проекта"
           />
-          <div class="author__container">
-            <h2 class="author__title">Об авторе</h2>
-            <p class="author__paragraph"
-              >Это блок с описанием автора проекта. Здесь следует указать, как
-              вас зовут, чем вы занимаетесь, фкакими технологиями разработки
-              владеете.</p
-            >
-            <p class="author__paragraph"
-              >Также можно рассказать о процессе обучения в Практикуме, чему вы
-              тут научились, и чем можете помочь потенциальным заказчикам.</p
-            >
-          </div>
         </section>
       </main>
       <footer class="footer"
         ><p class="footer__copyright">&copy; 2019 Supersite</p>
         <nav class="footer__link-list"
-          ><a class="footer__link" href="./paper.html">Главная</a
-          ><a class="footer__link" href="./about.html">О проекте</a
-          ><a class="footer__link" href="https://praktikum.yandex.ru/"
+          ><a class="link footer__link" href="./paper.html">Главная</a
+          ><a class="link footer__link" href="./about.html">О проекте</a
+          ><a class="link footer__link" href="https://praktikum.yandex.ru/"
             >Яндекс.Практикум</a
           ></nav
         >
-        <ul class="footer__icons-container">
-          <a class="footer__social-icon footer__social-icon_github" href=""></a>
+        <div class="footer__icons-container">
+          <a
+            class="footer__social-icon footer__social-icon_github"
+            href="https://vk.com/yandex.praktikum"
+          ></a>
           <a
             class="footer__social-icon footer__social-icon_facebook"
-            href=""
+            href="https://www.facebook.com/yandex.praktikum/"
           ></a>
-        </ul>
+        </div>
       </footer>
     </div>
-    <script src="main.4a8a23b51c165d611dad.js"></script>
+    <script src="scripts/main.cfbec065529469f3270a.js"></script>
   </body>
 </html>

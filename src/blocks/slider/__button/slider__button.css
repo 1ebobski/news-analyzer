@@ -29,3 +29,9 @@
   display: inline-block;
   top: 2px;
 }
+
+@media (max-width: 1279px) {
+  .slider__button {
+    display: none;
+  }
+}

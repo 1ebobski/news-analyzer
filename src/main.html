@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>News Analyzer - Main page</title>
+    <meta name="description" content="News Analyzer dynamic web-site" />
+    <meta name="author" content="Fedor Lukhmanov" />
+
+    <title>News Analyzer</title>
     <link
       rel="stylesheet"
       href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
     />
+    <link rel="shortcut icon" href="<%=require('./images/favicon.ico' )%>" />
   </head>
   <body>
     <div class="page">
@@ -35,16 +39,19 @@
             была в новостях за прошедшую неделю.</p
           >
 
-          <input class="search__input" placeholder="Введите тему новости" />
+          <input
+            class="search__input"
+            placeholder="Введите тему новости"
+            required
+          />
           <input class="button button_search" type="submit" value="Искать" />
         </section>
 
         <section class="search-status section section_grey">
           <div class="search-status__loader"></div>
-          <h3 class="search-status__subtitle"
-            >Идет поиск новостей...</h3
-          ></section
-        >
+          <h3 class="search-status__subtitle">Идет поиск новостей...</h3
+          ><i class="circle-preloader"></i
+        ></section>
 
         <section class="search-status section section_grey">
           <svg
@@ -125,13 +132,6 @@
           <button class="button button_results">Показать еще</button>
         </section>
         <section class="section section_author">
-          <!-- <picture>
-            <source
-              srcset=""
-              media="(min-width: 800px)"
-            />
-          </picture> -->
-
           <h2 class="section__title">Об авторе</h2>
           <p class="section__paragraph section__paragraph_narrow"
             >Это блок с описанием автора проекта. Здесь следует указать, как вас
@@ -144,7 +144,7 @@
           >
           <img
             class="section__author-photo"
-            src="<%=require('./images/malevich.jpg')%>"
+            src="<%=require('./images/author-photo.jpg')%>"
             alt="Федя Лухманов,
         автор проекта"
           />
@@ -159,7 +159,7 @@
             >Яндекс.Практикум</a
           ></nav
         >
-        <ul class="footer__icons-container">
+        <div class="footer__icons-container">
           <a
             class="footer__social-icon footer__social-icon_github"
             href="https://vk.com/yandex.praktikum"
@@ -168,7 +168,7 @@
             class="footer__social-icon footer__social-icon_facebook"
             href="https://www.facebook.com/yandex.praktikum/"
           ></a>
-        </ul>
+        </div>
       </footer>
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

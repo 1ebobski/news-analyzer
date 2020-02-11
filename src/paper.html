@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="News Analyzer dynamic web-site" />
+    <meta name="author" content="Fedor Lukhmanov" />
     <title>News Analyzer - Аналитика</title>
     <link
       rel="stylesheet"
       href="<%=htmlWebpackPlugin.files.chunks.paper.css %>"
     />
+    <link rel="shortcut icon" href="<%=require('./images/favicon.ico' )%>" />
   </head>
   <body>
     <div class="page"
@@ -88,7 +91,7 @@
             >Яндекс.Практикум</a
           ></nav
         >
-        <ul class="footer__icons-container">
+        <div class="footer__icons-container">
           <a
             class="footer__social-icon footer__social-icon_github"
             href="https://vk.com/yandex.praktikum"
@@ -96,7 +99,7 @@
           <a
             class="footer__social-icon footer__social-icon_facebook"
             href="https://www.facebook.com/yandex.praktikum/"
-          ></a> </ul></footer
+          ></a> </div></footer
     ></div>
     <script src="<%= htmlWebpackPlugin.files.chunks.paper.entry %>"></script>
   </body>

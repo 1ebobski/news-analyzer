@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="News Analyzer dynamic web-site" />
+    <meta name="author" content="Fedor Lukhmanov" />
+
     <title>News Analyzer - О себе</title>
     <link
       rel="stylesheet"
       href="<%=htmlWebpackPlugin.files.chunks.about.css %>"
     />
+    <link rel="shortcut icon" href="<%=require('./images/favicon.ico' )%>" />
   </head>
   <body>
     <div class="page">
@@ -141,7 +145,7 @@
           >
           <img
             class="section__author-photo"
-            src="<%=require('./images/malevich.jpg')%>"
+            src="<%=require('./images/author-photo.jpg')%>"
             alt="Федя Лухманов, автор проекта"
           />
         </section>
@@ -163,7 +167,11 @@
               <div class="commit__container">
                 <h3 class="commit__name">Антон Дмитриев</h3>
                 <span class="commit__email">anton@yandex.ru</span>
-                <img src="./images/avatar_01.png" class="commit__photo" />
+                <img
+                  src="<%=require('./images/avatar_01.png')%>"
+                  class="commit__photo"
+                  alt=""
+                />
               </div>
               <p class="commit__description"
                 >Emmet (formerly Zen Coding) is a web- developer’s toolkit that
@@ -175,7 +183,11 @@
               <div class="commit__container">
                 <h3 class="commit__name">Антон Дмитриев</h3>
                 <span class="commit__email">anton@yandex.ru</span>
-                <img src="./images/avatar_01.png" class="commit__photo" />
+                <img
+                  src="<%=require('./images/avatar_01.png')%>"
+                  class="commit__photo"
+                  alt=""
+                />
               </div>
               <p class="commit__description"
                 >Emmet (formerly Zen Coding) is a web- developer’s toolkit that
@@ -186,7 +198,11 @@
               <div class="commit__container">
                 <h3 class="commit__name">Мария Фёдорова</h3>
                 <span class="commit__email">mariiifed@yandex.ru</span>
-                <img src="./images/avatar_02.png" class="commit__photo" />
+                <img
+                  src="<%=require('./images/avatar_02.png')%>"
+                  class="commit__photo"
+                  alt=""
+                />
               </div>
               <p class="commit__description"
                 >You can install this plugin directly from NetBeans Plugin
@@ -198,7 +214,11 @@
               <div class="commit__container">
                 <h3 class="commit__name">Инга Иванова</h3>
                 <span class="commit__email">ingaiva@yandex.ru</span>
-                <img src="./images/avatar_03.png" class="commit__photo" />
+                <img
+                  src="<%=require('./images/avatar_03.png')%>"
+                  class="commit__photo"
+                  alt=""
+                />
               </div>
               <p class="commit__description"
                 >With Emmet, you can type CSS-like expressions that can be
@@ -211,7 +231,11 @@
               <div class="commit__container">
                 <h3 class="commit__name">Инга Иванова</h3>
                 <span class="commit__email">ingaiva@yandex.ru</span>
-                <img src="./images/avatar_03.png" class="commit__photo" />
+                <img
+                  src="<%=require('./images/avatar_03.png')%>"
+                  class="commit__photo"
+                  alt=""
+                />
               </div>
               <p class="commit__description"
                 >With Emmet, you can type CSS-like expressions that can be
@@ -219,10 +243,10 @@
                 type in the abb...</p
               >
             </div>
-            <div class="slider__page-control"
-              ><button class="slider__dot slider__dot_selected"></button
-              ><button class="slider__dot"></button
-              ><button class="slider__dot"></button></div
+            <nav class="slider__page-control">
+              <button class="slider__dot slider__dot_selected"></button>
+              <button class="slider__dot"></button>
+              <button class="slider__dot"></button></nav
           ></div>
         </section>
       </main>
@@ -235,7 +259,7 @@
             >Яндекс.Практикум</a
           ></nav
         >
-        <ul class="footer__icons-container">
+        <div class="footer__icons-container">
           <a
             class="footer__social-icon footer__social-icon_github"
             href="https://vk.com/yandex.praktikum"
@@ -244,7 +268,7 @@
             class="footer__social-icon footer__social-icon_facebook"
             href="https://www.facebook.com/yandex.praktikum/"
           ></a>
-        </ul>
+        </div>
       </footer>
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
