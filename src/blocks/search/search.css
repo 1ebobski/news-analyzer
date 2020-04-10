@@ -1,6 +1,7 @@
 @import url("./__input/search__input.css");
 @import url("./__subtitle/search__subtitle.css");
 @import url("./__title/search__title.css");
+@import url("./__button/search__button.css");
 
 .search {
   background-image: url("../../images/banner-main.png");

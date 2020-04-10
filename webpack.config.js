@@ -22,7 +22,8 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "src")
+    contentBase: path.join(__dirname, "src"),
+    openPage: "./main.html"
   },
   module: {
     rules: [

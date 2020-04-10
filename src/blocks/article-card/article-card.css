@@ -3,10 +3,6 @@
 @import url("./__source/article-card__source.css");
 @import url("./__title/article-image__title.css");
 
-@import url("./_one/activel-card_one.css");
-@import url("./_two/activel-card_two.css");
-@import url("./_three/activel-card_three.css");
-
 .article-card {
   display: flex;
   flex-direction: column;
@@ -25,4 +21,15 @@
   .article-card {
     padding: calc(100% * 17 / 25 + 16px) 16px 16px;
   }
+}
+
+.article-card:nth-of-type(1) {
+  background-image: url("../../images/image_01.png");
+}
+.article-card:nth-of-type(2) {
+  background-image: url("../../images/image_02.png");
+}
+
+.article-card:nth-of-type(3) {
+  background-image: url("../../images/image_03.png");
 }

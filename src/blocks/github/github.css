@@ -1,0 +1,23 @@
+@import url("./__title/github__title.css");
+@import url("./__link/github__link.css");
+@import url("./__header/github__header.css");
+
+.github {
+    padding: 80px calc((100vw - 1232px) / 2);
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f6f7;
+  }
+  
+  @media (max-width: 1279px) {
+    .github {
+      padding: 40px 40px;
+    }
+  }
+  
+  @media (max-width: 449px) {
+    .github {
+      padding: 16px;
+    }
+  }
+  

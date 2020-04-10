@@ -13,7 +13,7 @@
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 549px) {
   .news-grid {
     grid-template-columns: 1fr;
   }
