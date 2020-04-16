@@ -1,7 +1,0 @@
-@import url("./_selected/slider__dot_selected.css");
-
-.slider__dot:after {
-  content: ".";
-  font-size: 8px;
-  color: black;
-}

@@ -32,11 +32,12 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-md5-hash": "^0.0.6"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.1.4",
-    "cross-env": "^7.0.0"
+    "cross-env": "^7.0.0x ",
+    "flickity": "^2.2.1"
   }
 }

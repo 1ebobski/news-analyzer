@@ -12,7 +12,7 @@
   border: none;
 }
 
-.slider__button::before {
+/* .slider__button::before {
   content: "";
   z-index: 1;
   position: absolute;
@@ -22,7 +22,7 @@
   height: 288px;
   top: -126px;
   background: linear-gradient(to left, #fff 0%, transparent 100%);
-}
+} */
 
 .slider__button::after {
   content: url("../../../images/arrow-icon-white.svg");

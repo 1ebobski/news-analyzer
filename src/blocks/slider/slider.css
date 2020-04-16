@@ -1,21 +1,13 @@
-@import url("./__dot/slider__dot.css");
-@import url("./__page-control/slider__page-control.css");
+@import url("./__bullet/slider__bullet.css");
+@import url("./__bullets/slider__bullets.css");
 @import url("./__button/slider__button.css");
-@import url("./__opacity-gradient/slider__opacity-gradient.css");
+@import url("./__commit-list/slider__commit-list.css");
 
 .slider {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  z-index: 0;
-  width: 1440px;
-  overflow: hidden;
-  align-self: center;
+  padding-left: 0;
 }
 
-@media (max-width: 1279px) {
+/* @media (max-width: 1279px) {
   .slider {
-    justify-content: start;
-    align-self: auto;
   }
-}
+} */

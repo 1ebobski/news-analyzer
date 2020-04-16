@@ -6,9 +6,9 @@
 @import url("./__container/commit__container.css");
 
 .commit {
+  list-style: none;
   background-color: #fff;
-  min-width: 352px;
-  /* min-width: 256px; */
+  width: 352px;
   height: 240px;
   border-radius: 16px;
   margin: 0 8px;
@@ -16,18 +16,18 @@
   position: relative;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .commit {
     width: 288px;
     height: 194px;
   }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .commit {
     width: calc(100vw - 32px);
     margin-left: 0;
     padding: 16px;
     height: 264px;
   }
-}
+} */
