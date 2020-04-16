@@ -1,13 +1,3 @@
-@import url("./__bullet/slider__bullet.css");
-@import url("./__bullets/slider__bullets.css");
-@import url("./__button/slider__button.css");
-@import url("./__commit-list/slider__commit-list.css");
-
 .slider {
   padding-left: 0;
 }
-
-/* @media (max-width: 1279px) {
-  .slider {
-  }
-} */
