@@ -1,0 +1,10 @@
+.results__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  margin: 0 0 24px;
+}
+
+@media (max-width: 1023px) {
+  .results__title {
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,11 @@
+@import url("./__icon/search-status__icon.css");
+@import url("./__subtitle/search-status__subtitle.css");
+@import url("./__title/search-status__title.css");
+@import url("./__loader/search-status__loader.css");
+
+.search-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+}
