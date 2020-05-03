@@ -10,12 +10,11 @@ export default class CommitCard {
     this.link = props.link;
 
     this.cardElement = this.createElement();
-
-    this.cardElement.addEventListener("click", this.openCommit);
   }
 
   createElement() {
-    let cardElement = document.createElement("div");
+    let cardElement = document.createElement("a");
+    cardElement.href = this.link;
 
     cardElement.classList.add("commit");
     cardElement.innerHTML = `<span class="commit__date">${this.date}</span>
@@ -33,9 +32,5 @@ export default class CommitCard {
       >`;
 
     return cardElement;
-  }
-
-  openCommit() {
-    window.open(this.link, "_blank");
   }
 }

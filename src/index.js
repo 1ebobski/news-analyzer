@@ -27,13 +27,15 @@ searchButton.addEventListener("click", (e) => {
   e.preventDefault();
   mainElement.insertBefore(resultsSection, mainElement.children[1]);
   resultsSection.innerHTML = searchInProgressInnerHTML;
-
+  let query = searchInput.fetchQuery();
   newsApi
-    .getNews(searchInput.fetchQuery())
+    .getNews(query)
     .then((r) => {
       resultsSection.innerHTML = resultsReadyInnerHTML;
       let showMoreButton = document.querySelector(".results__button");
       const newsContainer = document.querySelector(".news-grid");
+
+      r.query = query;
       sessionStorage.setItem("newsData", JSON.stringify(r));
 
       let cardList = new NewsCardList(
@@ -50,7 +52,12 @@ searchButton.addEventListener("click", (e) => {
         })
       );
 
-      showMoreButton.addEventListener("click", cardList.loadBunch);
+      showMoreButton.addEventListener("click", (event) => {
+        cardList.loadBunch();
+        if (cardList.isFinished()) {
+          event.currentTarget.classList.add("results__button_hidden");
+        }
+      });
     })
     .catch((err) => {
       resultsSection.innerHTML = notFoundInnerHTML;

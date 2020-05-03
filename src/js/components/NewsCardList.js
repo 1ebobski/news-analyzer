@@ -24,10 +24,17 @@ export default class NewsCardList {
   }
 
   loadBunch = () => {
-    console.log(this.cards);
     this.cards
       .splice(0, this.bunchSize)
       .forEach((card) => this.container.appendChild(card.cardElement));
+  };
+
+  isFinished = () => {
+    if (this.cards.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
   };
 
   render() {
