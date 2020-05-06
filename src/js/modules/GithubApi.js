@@ -1,18 +1,10 @@
 export default class GithubApi {
   constructor(options) {
-    this.options = options;
+    this._options = options;
   }
 
   getCommits() {
-    return fetch(
-      this.options.url
-      //   {
-      //   method: "GET",
-      //   headers: {
-      //     Authorization: "token " + this.options.oAuthToken,
-      //   },
-      // }
-    )
+    return fetch(this._options.url)
       .then((res) => {
         if (res.ok) {
           return res.json();

@@ -2,25 +2,25 @@ import { getLastNDays } from "../utils/days-generator.js";
 
 export default class Statistics {
   constructor(container, newsDataString) {
-    this.container = container;
-    this.newsData = JSON.parse(newsDataString);
+    this._container = container;
+    this._newsData = JSON.parse(newsDataString);
 
-    this.axisElement = document.querySelector(".analytics__news-axis");
+    this._axisElement = document.querySelector(".analytics__news-axis");
 
-    this.graphData = this.composeGraphData();
-    this.barMaximum = Math.max(...this.graphData.map((day) => day.mentions));
-    this.graphElement = this.createGraphElement();
+    this._graphData = this._composeGraphData();
+    this._barMaximum = Math.max(...this._graphData.map((day) => day.mentions));
+    this._graphElement = this._createGraphElement();
 
-    this.totalNewsElements = document.querySelectorAll(
+    this._totalNewsElements = document.querySelectorAll(
       ".request-data__paragraph_bold"
     );
-    this.queryElement = document.querySelector(".request-data__title");
+    this._queryElement = document.querySelector(".request-data__title");
   }
 
-  composeGraphData() {
-    let graphData = getLastNDays(7);
+  _composeGraphData() {
+    const graphData = getLastNDays(7);
     graphData.forEach((day) => {
-      day.mentions = this.newsData.articles.filter((article) => {
+      day.mentions = this._newsData.articles.filter((article) => {
         return new Date(article.publishedAt).getDate() === day.date;
       }).length;
     });
@@ -28,30 +28,46 @@ export default class Statistics {
     return graphData;
   }
 
-  createGraphElement() {
-    let analyticsPlotElement = document.createElement("div");
+  _createGraphElement() {
+    const analyticsPlotElement = document.createElement("div");
     analyticsPlotElement.classList.add("analytics__plot");
 
-    let barWidthCoeff = (this.axisElement.clientWidth - 104) / this.barMaximum;
+    const barWidthCoeff =
+      (this._axisElement.clientWidth - 104) / this._barMaximum;
 
-    analyticsPlotElement.innerHTML = this.graphData
-      .map(
-        (bar) => `<span class="analytics__date" >${bar.date}, ${
-          bar.weekDay
-        }</span
-    ><div class="analytics__value" style="width: ${
-      barWidthCoeff * bar.mentions
-    }px">${bar.mentions}</div
-    >`
-      )
-      .join("");
+    this._graphData.forEach((bar) => {
+      const [dateElement, valueElement] = this._createBarElements({
+        date: bar.date,
+        weekDay: bar.weekDay,
+        mentions: bar.mentions,
+        barWidthCoeff,
+      });
+
+      analyticsPlotElement.append(dateElement, valueElement);
+    });
 
     return analyticsPlotElement;
   }
 
+  _createBarElements({ date, weekDay, mentions, barWidthCoeff }) {
+    const dateElement = document.createElement("span");
+    dateElement.classList.add("analytics__date");
+    dateElement.textContent = `${date}, ${weekDay}`;
+
+    const valueElement = document.createElement("div");
+    valueElement.classList.add("analytics__value");
+    valueElement.style = `width: ${barWidthCoeff * mentions}px`;
+    valueElement.textContent = mentions;
+
+    return [dateElement, valueElement];
+  }
+
   render() {
-    this.totalNewsElements[0].innerHTML = this.newsData.totalResults;
-    this.container.insertBefore(this.graphElement, this.container.children[6]);
-    this.queryElement.innerHTML = `Вы спросили: "${this.newsData.query}"`;
+    this._totalNewsElements[0].textContent = this._newsData.totalResults;
+    this._container.insertBefore(
+      this._graphElement,
+      this._container.children[6]
+    );
+    this._queryElement.textContent = `Вы спросили: "${this._newsData.query}"`;
   }
 }

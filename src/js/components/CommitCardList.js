@@ -1,9 +1,9 @@
 export default class CommitCardList {
   constructor(cards) {
-    this.cards = cards;
+    this._cards = cards;
   }
 
   fetchCommits() {
-    return this.cards.map((card) => card.cardElement);
+    return this._cards.map((card) => card.cardElement);
   }
 }

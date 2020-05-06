@@ -1,11 +1,11 @@
 export default class SearchInput {
   constructor(searchInputElement) {
-    this.searchInputElement = searchInputElement;
+    this._searchInputElement = searchInputElement;
   }
   // validateInput() {
   //   this.searchInputElement.
   // }
   fetchQuery() {
-    return this.searchInputElement.value;
+    return this._searchInputElement.value;
   }
 }

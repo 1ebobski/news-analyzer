@@ -2,46 +2,49 @@ import { dateConverter } from "../utils/date-converter.js";
 
 export default class NewsCard {
   constructor(props) {
-    this.title = props.title;
-    this.text = props.text;
-    this.image = props.image;
-    this.date = props.date;
-    this.source = props.source;
-    this.url = props.url;
+    this._title = props.title;
+    this._text = props.text;
+    this._image = props.image;
+    this._date = dateConverter(props.date);
+    this._source = props.source;
+    this._url = props.url;
 
-    this.cardElement = this.createElement(
-      this.title,
-      this.text,
-      this.image,
-      this.date,
-      this.source,
-      this.url
+    this.cardElement = this._createElement(
+      this._title,
+      this._text,
+      this._image,
+      this._date,
+      this._source,
+      this._url
     );
-    this.cardElement.addEventListener("click", this.openArticle);
   }
 
-  createElement() {
-    let cardElement = document.createElement("a");
-    cardElement.href = this.url;
+  _createElement() {
+    const cardElement = document.createElement("a");
+    cardElement.href = this._url;
+    cardElement.style.backgroundImage = `url(${this._image})`;
     cardElement.target = "_blank";
     cardElement.classList.add("article-card");
-    cardElement.innerHTML = `<time class='article-card__date' datetime='2019-08-02 20:00'>${dateConverter(
-      this.date
-    )}</time>
-                            <h3 class='article-card__title'>${this.title}</h3>
-                            <p class='article-card__paragraph'>${this.text}</p>
-                            <span class='article-card__source' >${
-                              this.source
-                            }</span>`;
 
-    cardElement.style.backgroundImage = `url(${this.image})`;
+    const dateElement = document.createElement("time");
+    dateElement.classList.add("article-card__date");
+    dateElement.datetime = "2019-08-02 20:00";
+    dateElement.textContent = this._date;
+
+    const titleElement = document.createElement("h3");
+    titleElement.classList.add("article-card__title");
+    titleElement.textContent = this._title;
+
+    const textElement = document.createElement("h3");
+    textElement.classList.add("article-card__paragraph");
+    textElement.textContent = this._text;
+
+    const sourceElement = document.createElement("span");
+    sourceElement.classList.add("article-card__source");
+    sourceElement.textContent = this._source;
+
+    cardElement.append(dateElement, titleElement, textElement, sourceElement);
 
     return cardElement;
   }
-
-  // openArticle() {
-  //   let win = window.open();
-  //   console.log(this.url);
-  //   win.document.write("<img src='" + this.url + "'/>");
-  // }
 }
