@@ -12,4 +12,4 @@
 
 В настоящий момент разработана структура и верстка проекта, следующим этапом будет идти логика на JS.
 
-Проект выложен на сервис github pages и ознакомиться с ним можно по ссылке: https://1ebobski.github.io/news-analyzer/index.html
+Проект выложен на сервис github pages и ознакомиться с ним можно по ссылке: https://1ebobski.github.io/news-analyzer/
